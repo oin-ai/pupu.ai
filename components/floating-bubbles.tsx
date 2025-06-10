@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Github, Sparkles, MessageCircle, ShieldCheck } from "lucide-react"
+import Link from 'next/link';
 
 function Bubble({ x, y, size, color }: { x: number; y: number; size: number; color: string }) {
   return (
@@ -26,6 +27,13 @@ function Bubble({ x, y, size, color }: { x: number; y: number; size: number; col
       }}
     />
   )
+}
+
+function skipToPrivacyPolicyPage() {
+  const privacyPolicySection = document.getElementById("privacy-policy-section");
+  if (privacyPolicySection) {
+    privacyPolicySection.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
 function FloatingBubbles() {
@@ -64,6 +72,11 @@ function Navbar() {
               <span className="text-2xl mr-1">🐰</span> pupu.ai
             </span>
           </div>
+
+          <Link href="/privacy" className="ml-auto mr-6 flex text-blue-600 items-center cursor-pointer">
+            Privacy policy
+          </Link>
+          
           <a
             href="https://github.com"
             target="_blank"
