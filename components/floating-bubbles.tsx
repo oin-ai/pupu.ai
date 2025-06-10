@@ -29,13 +29,6 @@ function Bubble({ x, y, size, color }: { x: number; y: number; size: number; col
   )
 }
 
-function skipToPrivacyPolicyPage() {
-  const privacyPolicySection = document.getElementById("privacy-policy-section");
-  if (privacyPolicySection) {
-    privacyPolicySection.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
 function FloatingBubbles() {
   const [bubbles, setBubbles] = useState<Array<{ id: number; x: number; y: number; size: number; color: string }>>([])
 
