@@ -113,6 +113,9 @@ export default function PrivacyPage() {
           If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at [Contact Email Address].
         </p>
       </div>
+
+      <a href="story_ai_app://story?story_id=[故事ID的值]&title=[标题的值]&content=[内容的值]&pic_link=[图片链接的值]&audio_link=https://zk.work/download/test-audio.mp3&voice_name=[音色名称的值]
+">打开 Story Ai</a>
     </div>
   );
 }
