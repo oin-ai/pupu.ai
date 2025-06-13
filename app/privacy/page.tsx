@@ -116,10 +116,7 @@ export default function PrivacyPage() {
 
       <a href="storyai://">storyai://</a>
       <br/>
-      <a href="storyai://story?story_id=[故事ID的值]&title=[标题的值]&content=[内容的值]&pic_link=https://storyai.inferwave.com:29281/image/storylogo/a9eb0dd5ff0f3408db54a10578eafcdd.jpg&audio_link=https://zk.work/download/test-audio.mp3&voice_name=[音色名称的值]">打开 Story Ai</a>
-      <br/>
-      <a href="storyai://home?story_id=12345">storyai://home?story_id=12345</a>
-      <br/>
+      <a href="storyai://pages/story/index?story_id=[故事ID的值]&title=[标题的值]&content=[内容的值]&pic_link=https://storyai.inferwave.com:29281/image/storylogo/a9eb0dd5ff0f3408db54a10578eafcdd.jpg&audio_link=https://zk.work/download/test-audio.mp3&voice_name=[音色名称的值]">打开 Story Ai</a>
     </div>
   );
 }
