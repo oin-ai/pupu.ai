@@ -113,10 +113,6 @@ export default function PrivacyPage() {
           If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at [Contact Email Address].
         </p>
       </div>
-
-      <a href="storyai://">storyai://</a>
-      <br/>
-      <a href="storyai://pages/story/index?title=小蝌蚪找妈妈&content=池塘里有一群小蝌蚪，大大的脑袋，黑灰色的身子，甩着长长的尾巴，快活地游来游去&pic_link=https://storyai.inferwave.com:29281/image/hot/b6dbdb426812ba2e7c9e3827abdeaaa6.jpg&audio_link=https://storyai.inferwave.com:29281/audio/hot/b5049a2c8e68f427dc0fbfd5dae4d589.mp3&voice_name=兜兜&story_id=b5049a2c8e68f427dc0fbfd5dae4d589">打开 Story Ai</a>
     </div>
-  );
+  )
 }
