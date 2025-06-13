@@ -6,14 +6,14 @@ export default function PrivacyPage() {
   const searchParams = useSearchParams();
   
   // Extract query parameters from URL
-  const username = searchParams.get('username') || '--';
+  const username = searchParams.get('username') || '...';
   const avatarUrl = searchParams.get('avatarUrl') || '/avatar.png';
-  const title = searchParams.get('title') || '小蝌蚪找妈妈';
-  const content = searchParams.get('content') || '在一条清澈的小河里，住着一群可爱的小蝌蚪。它们是青蛙妈妈的孩子，刚从卵里孵化出来，黑黑的身子，细细的尾巴，在水里快活地游来游去，在一条清澈的小河里，住着一群可爱的小蝌蚪。它们是青蛙妈妈的孩子，刚从卵里孵化出来，黑黑的身子，细细的尾巴，在水里快活地游来游去，在一条清澈的小河里，住着一群可爱的小蝌蚪。它们是青蛙妈妈的孩子，刚从卵里孵化出来，黑黑的身子，细细的尾巴，在水里快活地游来游去';
-  const pic_link = searchParams.get('pic_link') || 'https://storyai.inferwave.com:29281/image/hot/b6dbdb426812ba2e7c9e3827abdeaaa6.jpg';
-  const audio_link = searchParams.get('audio_link') || 'https://storyai.inferwave.com:29281/audio/hot/b5049a2c8e68f427dc0fbfd5dae4d589.mp3';
+  const title = searchParams.get('title') || '...';
+  const content = searchParams.get('content') || '...';
+  const pic_link = searchParams.get('pic_link') || '';
+  const audio_link = searchParams.get('audio_link') || '';
   const voice_name = searchParams.get('voice_name') || '兜兜';
-  const story_id = searchParams.get('story_id') || 'b5049a2c8e68f427dc0fbfd5dae4d589';
+  const story_id = searchParams.get('story_id') || '12345';
 
   // Construct the deep link URL
   const deepLinkUrl = `storyai://pages/story/index?title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}&pic_link=${encodeURIComponent(pic_link)}&audio_link=${encodeURIComponent(audio_link)}&voice_name=${encodeURIComponent(voice_name)}&story_id=${story_id}`;
@@ -39,11 +39,22 @@ export default function PrivacyPage() {
           // Try to open the app
           window.location.href = deepLinkUrl;
           
-          // If app not installed, redirect to App Store after timeout
+          // If app not installed, redirect based on platform
           setTimeout(() => {
             if (!document.hidden) {
-              // Replace with your actual App Store URL
-              window.location.href = 'https://apps.apple.com/cn/app/story-ai/idYOUR_APP_ID';
+              const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+              const isAndroid = /Android/.test(navigator.userAgent);
+              
+              if (isIOS) {
+                // iOS - redirect to App Store
+                window.location.href = 'https://apps.apple.com/cn/app/story-ai/idYOUR_APP_ID';
+              } else if (isAndroid) {
+                // Android - redirect to official website
+                window.location.href = 'https://www.pupupuai.com';
+              } else {
+                // Other devices - redirect to official website
+                window.location.href = 'https://www.pupupuai.com';
+              }
             }
           }, 500);
         }}
