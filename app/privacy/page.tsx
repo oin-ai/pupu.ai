@@ -116,7 +116,7 @@ export default function PrivacyPage() {
 
       <a href="storyai://">storyai://</a>
       <br/>
-      <a href="storyai://pages/story/index?story_id=[故事ID的值]&title=[标题的值]&content=[内容的值]&pic_link=https://storyai.inferwave.com:29281/image/storylogo/a9eb0dd5ff0f3408db54a10578eafcdd.jpg&audio_link=https://zk.work/download/test-audio.mp3&voice_name=[音色名称的值]">打开 Story Ai</a>
+      <a href="storyai:/​/pages/story/index?title=小蝌蚪找妈妈&content=池塘里有一群小蝌蚪，大大的脑袋，黑灰色的身子，甩着长长的尾巴，快活地游来游去。\r\n小蝌蚪游哇游，过了几天，长出了两条后腿。他们看见鲤鱼妈妈在教小鲤鱼捕食，就迎上去，问：“鲤鱼阿姨，我们的妈妈在哪里？”鲤鱼妈妈说：“你们的妈妈有四条腿，宽嘴巴。你们到那边去找吧！”\r\n小蝌蚪游哇游，过了几天，长出了两条前腿。他们看见一只乌龟摆动着四条腿在水里游，连忙追上去，叫着：“妈妈，妈妈！”乌龟笑着说：“我不是你们的妈妈。你们的妈妈头顶上有两只大眼睛，披着绿衣裳。你们到那边去找吧！”\r\n小蝌蚪游哇游，过了几天，尾巴变短了。他们游到荷花旁边，看见荷叶上蹲着一只大青蛙，披着碧绿的衣裳，露着雪白的肚皮，鼓着一对大眼睛。\r\n小蝌蚪游过去，叫着：“妈妈，妈妈！”青蛙妈妈低头一看，笑着说：“好孩子，你们已经长成青蛙了，快跳上来吧！”他们后腿一蹬，向前一跳，蹦到了荷叶上。\r\n不知什么时候，小青蛙的尾巴已经不见了。他们跟着妈妈，天天去捉害虫。&pic_link=https://storyai.inferwave.com:29281/image/hot/b6dbdb426812ba2e7c9e3827abdeaaa6.jpg&audio_link=https://storyai.inferwave.com:29281/audio/hot/b5049a2c8e68f427dc0fbfd5dae4d589.mp3&voice_name=兜兜&story_id=b5049a2c8e68f427dc0fbfd5dae4d589">打开 Story Ai</a>
     </div>
   );
 }
