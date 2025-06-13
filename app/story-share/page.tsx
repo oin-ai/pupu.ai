@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function PrivacyPage() {
+function PageContent() {
   const searchParams = useSearchParams();
   
   // Extract query parameters from URL
@@ -64,5 +64,13 @@ export default function PrivacyPage() {
         Open Story Ai Listening
       </button>
     </div>
+  )
+}
+
+export default function PrivacyPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PageContent />
+    </Suspense>
   )
 }
