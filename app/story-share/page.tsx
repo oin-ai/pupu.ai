@@ -1,6 +1,7 @@
 "use client";
 import React, { Suspense, useState, useRef, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import Head from "next/head";
 
 const AudioPlayer = ({ src }: { src: string }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -71,9 +72,9 @@ const AudioPlayer = ({ src }: { src: string }) => {
     <div className="flex items-center gap-3 p-1 rounded-lg">
       <button 
         onClick={togglePlay}
-        className="w-8 h-8 flex items-center justify-center rounded-full bg-[#FFF45A]"
+        className="w-7 h-7 flex items-center justify-center rounded-full"
       >
-        {isPlaying ? '❚❚' : '▶'}
+        <img src={ isPlaying ? '/pause.png' : '/play.png' } alt="" className="w-full" />
       </button>
       
       <input
@@ -89,8 +90,8 @@ const AudioPlayer = ({ src }: { src: string }) => {
               to right,
               #000 0%,
               #000 ${(currentTime / (duration || 100)) * 100}%,
-              #fff ${(currentTime / (duration || 100)) * 100}%,
-              #fff 100%
+              #ffffffa1 ${(currentTime / (duration || 100)) * 100}%,
+              #ffffffa1 100%
             )
           `
         }}
@@ -115,22 +116,55 @@ declare global {
 function PageContent() {
   const searchParams = useSearchParams();
   
-  // Extract query parameters from URL
+  // Extract only required parameters from URL
   const username = searchParams.get('username') || '...';
   const avatarUrl = searchParams.get('avatarUrl') || '/avatar.png';
-  const title = searchParams.get('title') || '...';
-  const content = searchParams.get('content') || '...';
-  const pic_link = searchParams.get('pic_link') || '';
-  const audio_link = searchParams.get('audio_link') || '';
-  const voice_name = searchParams.get('voice_name') || '兜兜';
-  const story_id = searchParams.get('story_id') || '12345';
+  const story_id = searchParams.get('story_id') || '';
 
-  // Construct the deep link URL
-  const deepLinkUrl = `storyai://pages/story/index?title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}&pic_link=${encodeURIComponent(pic_link)}&audio_link=${encodeURIComponent(audio_link)}&voice_name=${encodeURIComponent(voice_name)}&story_id=${story_id}`;
+  // State for API data
+  const [storyData, setStoryData] = useState({
+    title: '...',
+    content: '...',
+    pic_link: '',
+    audio_link: '',
+    voice_name: ''
+  });
+
+  // Fetch story data when story_id changes
+  useEffect(() => {
+    if (story_id) {
+      fetch(`/api/proxy?story_id=${story_id}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setStoryData({
+            title: data?.data?.title || '测试故事',
+            content: data?.data?.content || '测试故事测试故事测试故事测试故事，测试故事测试故事测试故事，测试故事，测试故事测试故事测试故事测试故事，测试故事测试故事测试故事，测试故事，测试故事测试故事测试故事测试故事，测试故事测试故事测试故事，测试故事，测试故事测试故事测试故事测试故事，测试故事测试故事测试故事，测试故事',
+            pic_link: data?.data?.pic_link || 'https://storyai.inferwave.com:29281/image/storylogo/c1294640c75a4d3ed65d1bba9ee5284a.jpg',
+            audio_link: data?.data?.audio_link || 'https://zk.work/download/test-audio.mp3',
+            voice_name: data?.data?.voice_name || '45454545'
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching story data:', error);
+        });
+    }
+  }, [story_id]);
+
+  // Construct the deep link URL using API data
+  const deepLinkUrl = `storyai://pages/story/index?story_id=${story_id}`;
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="bg-blue-500 rounded-3xl p-6" style={{ backgroundColor: '#D7EF7A', width: '85%', marginTop: '10%' }}>
+    <>
+      <Head>
+        <title>{storyData.title}</title>
+      </Head>
+      <div className="flex flex-col justify-center items-center">
+      <div className="bg-blue-500 rounded-3xl p-6 w-5/6 md:w-90" style={{ backgroundColor: '#D7EF7A', marginTop: '10%' }}>
 
         <div className="flex items-center mb-4">
           <img src={avatarUrl} alt="" className="w-13 rounded-full" />
@@ -138,14 +172,22 @@ function PageContent() {
         </div>
 
         <div className="rounded-2xl mx-auto mb-6 overflow-hidden relative pb-5" style={{ backgroundColor: '#FFF45A' }}>
-          <img src={Array.isArray(pic_link) ? pic_link[0] : pic_link} alt="" className="" />
-          <h1 className="px-4 py-2 text-sm font-semibold">{title}</h1>
-          <p className="px-4 text-xs multi-line-ellipsis-5 indent-sm">&emsp;&emsp;{content}</p>
+          <div style={{aspectRatio: '1.7777', background: '#0000000a'}}>
+            {storyData.pic_link && (
+              <img 
+                src={Array.isArray(storyData.pic_link) ? storyData.pic_link[0] : storyData.pic_link} 
+                alt="" 
+                className="rounded-t-3xl" 
+              />
+            )}
+          </div>
+          <h1 className="px-4 py-2 text-sm font-semibold">{storyData.title}</h1>
+          <p className="px-4 text-xs multi-line-ellipsis indent-sm">&emsp;&emsp;{storyData.content}</p>
           <img src="/share_frame.png" className="absolute inset-0 w-full h-full" />
         </div>
 
         <div id="player">
-          {audio_link && <AudioPlayer src={audio_link} />}
+          {storyData.audio_link && <AudioPlayer src={storyData.audio_link} />}
         </div>
       </div>
       <button 
@@ -181,6 +223,7 @@ function PageContent() {
         Open Story Ai Listening
       </button>
     </div>
+    </>
   )
 }
 

@@ -121,7 +121,7 @@
   }
 }
 
-.multi-line-ellipsis-5 {
+.multi-line-ellipsis {
   display: -webkit-box;     /* 旧版弹性盒子模型 */
   -webkit-box-orient: vertical; /* 内容垂直排列 */
   -webkit-line-clamp: 6;    /* 最多显示 5 行 */
@@ -143,7 +143,7 @@
   border-radius: 50%;
   background: #000;
   cursor: pointer;
-  margin-top: -4px;
+  margin-top: -4.5px;
 }
 
 .custom-range::-moz-range-thumb {
