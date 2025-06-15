@@ -106,7 +106,6 @@ const AudioPlayer = ({ src }: { src: string }) => {
   );
 };
 
-// Type declaration for iOS standalone mode
 declare global {
   interface Navigator {
     standalone?: boolean;
