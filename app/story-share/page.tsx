@@ -27,7 +27,7 @@ async function getStoryData(story_id: string) {
   };
 
   try {
-    const response = await fetch(`http://localhost:3000/api/proxy?story_id=${story_id}`);
+    const response = await fetch(`https://storyai.inferwave.com:29281/shared_story?story_id=${story_id}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
