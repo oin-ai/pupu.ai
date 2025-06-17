@@ -7,7 +7,7 @@ export default function PrivacyPage() {
       
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
         <p className="mb-4">
-          This Privacy Policy describes how Pupu AI (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;) collects, uses, stores, and shares information when you use our application ("App") and related services ("Services"). By using the Services, you consent to the practices described in this Privacy Policy. If you do not agree with our practices, please do not use the Services.
+          This Privacy Policy describes how Pupu AI ("we," "us," "our") collects, uses, stores, and shares information when you use our application ("App") and related services ("Services"). By using the Services, you consent to the practices described in this Privacy Policy. If you do not agree with our practices, please do not use the Services. 
         </p>
       </div>
 
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
       </div>
 
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-        <h2 className="text-2xl font-semibold mb-4">6. Children&apos;s Privacy</h2>
+        <h2 className="text-2xl font-semibold mb-4">6. Children's Privacy</h2>
         <p>
           The Services are not intended for use by children under the age of 13 without the consent of a parent or legal guardian. We do not knowingly collect personal information from children under the age of 13. If we become aware that we have collected personal information from a child under the age of 13 without parental consent, we will delete that information as soon as possible.
         </p>
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
           We may update this Privacy Policy from time to time. When we make material changes, we will notify you by email or by posting a notice on the App. Your continued use of the Services after the effective date of the revised Privacy Policy constitutes your acceptance of the changes.
         </p>
         <p>
-          If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at [Contact Email Address].
+          If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at support@pupupuai.com.
         </p>
       </div>
     </div>
