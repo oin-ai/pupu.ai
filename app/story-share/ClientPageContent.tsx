@@ -37,7 +37,7 @@ export default function ClientPageContent({
         <div className="bg-blue-500 rounded-3xl p-6 w-5/6 md:w-90" style={{ backgroundColor: '#D7EF7A', marginTop: '10%' }}>
           <div className="flex items-center mb-4">
             <img src={avatarUrl} alt="" className="w-13 h-13 rounded-full object-cover" />
-            <span className="ml-3 text-xl">{ username }</span>
+            <span className="ml-3 text-xl flex-1 overflow-hidden overflow-ellipsis whitespace-nowrap">{ 'asndfoandfo asdfoasodfasdfasdfasdfasdfasjdfads' }</span>
           </div>
 
           <div className="rounded-2xl mx-auto mb-6 overflow-hidden relative pb-5" style={{ backgroundColor: '#FFF45A' }}>
