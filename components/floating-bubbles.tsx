@@ -250,23 +250,27 @@ export default function FloatingBubblesBackground({
           </h3>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <a
-              href="#" // Replace with actual App Store link
+              href="javascript:void(0);" // Replace with actual App Store link
               className="flex items-center justify-center gap-3 px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-lg text-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-              target="_blank"
               rel="noopener noreferrer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-apple"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>
-              <span>App Store</span>
+              <span className="flex flex-col">
+                <span className="text-sm">App Store</span>
+                <span className="text-xs">Comming soon</span>
+              </span>
             </a>
             <a
-              href="#" // Replace with actual Google Play link
+              href="javascript:void(0);" // Replace with actual Google Play link
               className="flex items-center justify-center gap-3 px-8 py-4 bg-gray-700 dark:bg-gray-300 text-white dark:text-black rounded-lg text-lg font-medium hover:bg-gray-600 dark:hover:bg-gray-400 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-              target="_blank"
               rel="noopener noreferrer"
             >
               {/* Basic Google Play-like icon (simplified) */}
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="text-white dark:text-black"><path d="M3 20.517V3.483A2.006 2.006 0 0 1 4.274 1.7L15.726 12L4.274 22.3A2.006 2.006 0 0 1 3 20.517zM17.184 12.75L6.468 19.965l7.708-3.854.001-.001.001-.001 3.006-1.503zm0-1.5L6.468 4.035l7.708 3.854.001.001.001.001 3.006 1.503zM20.726 12L17.185 14.25v-4.5L20.726 12z"/></svg>
-              <span>Google Play</span>
+               <span className="flex flex-col">
+                <span className="text-sm">Google Play</span>
+                <span className="text-xs">Comming soon</span>
+              </span>
             </a>
           </div>
         </motion.div>

@@ -28,6 +28,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer style={{
+          textAlign: 'center',
+          fontSize: '14px',
+          color: '#888',
+          padding: '2% 0',
+          background: '#fafafa',
+        }}>
+          ICP备案号：沪ICP备2024102876号-3
+        </footer>
       </body>
     </html>
   );
