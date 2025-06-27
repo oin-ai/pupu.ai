@@ -101,7 +101,7 @@ export default function ClientPageContent({
           className="px-8 py-3 rounded-full mt-10 text-sm font-semibold" 
           style={{ backgroundColor: '#D7EF7A' }}
         >
-          Open Story Ai To Listen
+          Open PUPU.AI To Listen
         </button>
       </div>
     </>

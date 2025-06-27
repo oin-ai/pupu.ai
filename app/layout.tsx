@@ -28,7 +28,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <footer style={{
+        <footer className="hidden md:block" style={{
           textAlign: 'center',
           fontSize: '14px',
           color: '#888',
