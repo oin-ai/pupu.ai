@@ -8,7 +8,7 @@ export async function generateMetadata({
   searchParams: { [key: string]: string | string[] | undefined }
 }): Promise<Metadata> {
   const params = await searchParams;
-  const story_id = params.story_id as string || '';
+  const story_id = params.id as string || '';
   const storyData = await getStoryData(story_id);
 
   return {
@@ -40,7 +40,7 @@ async function getStoryData(story_id: string) {
       voice_name: data?.data?.voice_name || ''
     };
   } catch (error) {
-    console.error('Error fetching story data:', error);
+    console.log('Error fetching story data:', error);
     return {
       title: '...',
       content: '...',
@@ -58,8 +58,8 @@ export default async function Page({
 }) {
   const params = await searchParams;
   const username = params.username as string || '...';
-  const avatarUrl = params.avatarUrl as string || '/avatar.png';
-  const story_id = params.story_id as string || '';
+  const avatarUrl = (params.avatarUrl as string) ? ('https://storyai.inferwave.com:29281/image/userlogo/' + params.avatarUrl) : '/avatar.png';
+  const story_id = params.id as string || '';
   const storyData = await getStoryData(story_id);
 
   return (
