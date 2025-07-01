@@ -152,10 +152,10 @@ export default function FloatingBubblesBackground({
               className="mb-12"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-yellow-500 dark:from-pink-400 dark:to-yellow-400">
-                Introducing Story AI
+                Introducing PUPU.AI
               </h2>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                Story AI is an innovative platform designed for children. We bring stories to life with AI-powered narration and interactive audio responses, making learning fun and engaging.
+                PUPU.AI is an innovative platform designed for children. We bring stories to life with AI-powered narration and interactive audio responses, making learning fun and engaging.
               </p>
             </motion.div>
 
@@ -199,7 +199,7 @@ export default function FloatingBubblesBackground({
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 tracking-tight 
                            text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 
                            dark:from-purple-400 dark:to-pink-400">
-              Discover the Magic of Story AI
+              Discover the Magic of PUPU.AI
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Our platform is crafted to provide an enchanting and educational storytelling experience for children.
@@ -246,7 +246,7 @@ export default function FloatingBubblesBackground({
           className="mt-20 text-center"
         >
           <h3 className="text-3xl font-semibold mb-8 text-gray-800 dark:text-gray-100">
-            Get Started with Story AI
+            Get Started with PUPU.AI
           </h3>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <a

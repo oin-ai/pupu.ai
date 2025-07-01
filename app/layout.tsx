@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "pupu.ai",
-  description: "Welcome to pupu.ai, home of Story AI! Discover AI-powered storytelling and interactive audio experiences for children.",
+  description: "Welcome to pupu.ai, home of PUPU.AI! Discover AI-powered storytelling and interactive audio experiences for children.",
 };
 
 export default function RootLayout({
